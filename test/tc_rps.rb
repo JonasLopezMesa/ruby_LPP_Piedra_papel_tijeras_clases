@@ -16,14 +16,15 @@ class TestRockPaperScissors < Test::Unit::TestCase
 		assert_raise(SyntaxError) {RockPaperScissors.play('loquesea')}
 	end
 	
-	#def test_variety
-		#answers = []
-		#20.times.do
-		#	answers.push RockPaperScissors.throw
-		#end
-		#assert(answers)
+	def test_variety
+		answers = []
+		resultado = ['piedra', 'papel', 'tijeras']
+		20.times.do
+			answers.push RockPaperScissors.throw
+		end
+		assert(SyntaxError, 'No tiene el mínimo exigido') {(resultado | answers).size < 3}
 			
-	#end
+	end
 			
 end
 
