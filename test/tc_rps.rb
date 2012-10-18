@@ -19,12 +19,11 @@ class TestRockPaperScissors < Test::Unit::TestCase
 	def test_variety
 		answers = []
 		resultado = ['piedra', 'papel', 'tijeras']
-		20.times.do
-			answers.push RockPaperScissors.throw
-		end
-		assert(SyntaxError, 'No tiene el mínimo exigido') {(resultado | answers).size < 3}
-			
+		20.times{
+			answers.push RockPaperScissors.computer_play
+		}
+		final = resultado | answers
+		
+		assert_equal(3, final.size(), "poca variedad")
 	end
-			
 end
-

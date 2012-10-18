@@ -8,7 +8,7 @@ class RockPaperScissors
 	def play(player_throw)
 
 		puts "Escoje uno de #{tirada.join(', ')}: "
-		tirada_jugador = gets.chomp.to_sym #to_sym????
+		tirada_jugador = gets.chomp.to_sym 
 
 		raise ScriptError, "Tu debes ejecutar: ''#{$0}'' seguido por uno de los siguientes '#{tirada.join(', ')}'" unless tirada.include? tirada_jugador
 
@@ -26,5 +26,13 @@ class RockPaperScissors
 		answer = "Bien hecho. #{tirada_jugador} gana a #{tirada_maquina}"
 		end
 	end #play
+	
+	
+	def computer_play
+		aleatorio = rand(2)
+		tirada_maquina = tirada[aleatorio]
+	end
+	
+	
 end #RockPaperScissors
 

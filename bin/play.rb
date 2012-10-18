@@ -1,3 +1,3 @@
 require 'rps'
 puts RockPaperScissors.play(ARGV.shift || '')
-end
+$end
